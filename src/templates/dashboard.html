@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Dashboard | Plagiarism Checker using Blockchain</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{{url_for('static',filename='dashboard/css/style.css')}}">
+
+	</head>
+	<body>
+	<div id="colorlib-page">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
+			<nav id="colorlib-main-menu" role="navigation">
+				<ul>
+					<li class="colorlib-active"><a href="/dashboard">Home</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</nav>
+		</aside> <!-- END COLORLIB-ASIDE -->
+
+		<div id="colorlib-main">
+			<section class="ftco-section pt-4 mb-5 ftco-intro">
+				<div class="container-fluid px-3 px-md-0">
+					<div class="row">
+						<div class="col-md-12 mb-4">
+							<h1 class="h2">Check Plagiarism</h1>
+							<p>Plagiarism is presenting someone else's work or ideas as your own, with or without their consent, by incorporating it into your work without full acknowledgement.
+                                We will be helping the content creators to protect the content and check plagiarism for the content. </p>
+						</div>
+                        <div class="col-md-12">
+                        <form action="/checkPlagiarism" method="post">
+						<div class="col-md-12">
+							<div class="form-group">
+                                <label for="textinput">Place your Content:</label>
+                                <textarea class="form-control" rows="15" id="textinput" name="textinput" placeholder="Write your content here to check Plagiarism"></textarea>
+                            </div>
+						</div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <button type="submit" name="submit" id="submit" class="btn-warning">Check Plagiarism</button>
+                            </div>
+                        </div>
+                        </form>
+                        <span style="color:red">{{res}}</span>
+                        </div>
+					</div>
+				</div>
+			</section>
+		</div><!-- END COLORLIB-MAIN -->
+	</div><!-- END COLORLIB-PAGE -->
+
+	</section>
+
+	<script src="{{url_for('static',filename='dashboard/js/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='dashboard/js/popper.js')}}"></script>
+  <script src="{{url_for('static',filename='dashboard/js/bootstrap.min.js')}}"></script>
+  <script src="{{url_for('static',filename='dashboard/js/main.js')}}"></script>
+
+	</body>
+</html>
+
